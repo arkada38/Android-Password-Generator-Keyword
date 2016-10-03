@@ -1,4 +1,4 @@
-package com.arkada38.passwortgeneratorkeyword;
+package com.arkada38.passwordgeneratorkeyword;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

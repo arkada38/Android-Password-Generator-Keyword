@@ -1,4 +1,4 @@
-package com.arkada38.passwortgeneratorkeyword;
+package com.arkada38.passwordgeneratorkeyword;
 
 import org.junit.Test;
 
