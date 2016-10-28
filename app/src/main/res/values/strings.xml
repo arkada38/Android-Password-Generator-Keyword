@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Passwort Generator Keyword</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="keyword">Keyword</string>
+    <string name="length_of_password">Length of password</string>
+    <string name="password">Password</string>
+    <string name="service_name">Service name</string>
+    <string name="use_special_symbols">Use special symbols</string>
 </resources>
