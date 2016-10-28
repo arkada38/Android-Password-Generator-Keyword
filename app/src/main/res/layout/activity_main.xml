@@ -1,85 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-    <android.support.design.widget.TextInputLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="generatorForm" type="com.arkada38.passwordgeneratorkeyword.GeneratorForm"/>
+    </data>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/serviceName"
+                android:inputType="text"
+                android:hint="@string/service_name"
+                android:maxLines="1"
+                android:text="@{generatorForm.serviceName}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/keyword"
+                android:hint="@string/keyword"
+                android:maxLines="1"
+                android:text="@{generatorForm.keyword}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/lengthOfPassword"
+                android:hint="@string/length_of_password"
+                android:maxLines="1"
+                android:text="@{Integer.toString(generatorForm.passwordLength)}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/serviceName"
-            android:inputType="text"
-            android:hint="@string/service_name"
-            android:maxLines="1" />
+            android:id="@+id/seekBar"
+            android:max="32" />
 
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/password"
+                android:inputType="text"
+                android:hint="@string/password"
+                android:maxLines="1"
+                android:text="@{generatorForm.password}" />
 
-        <EditText
+        </android.support.design.widget.TextInputLayout>
+
+        <CheckBox
+            android:text="@string/use_special_symbols"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/keyword"
-            android:hint="@string/keyword"
-            android:maxLines="1" />
+            android:id="@+id/useSpecialSymbols"
+            android:checked="@{generatorForm.useSpecialSymbols}" />
 
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
+        <Button
+            android:text="@string/copy_to_clipboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/lengthOfPassword"
-            android:hint="@string/length_of_password"
-            android:maxLines="1" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:max="32" />
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/password"
-            android:inputType="text"
-            android:hint="@string/password"
-            android:maxLines="1" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <CheckBox
-        android:text="@string/use_special_symbols"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/useSpecialSymbols" />
-
-    <Button
-        android:text="@string/copy_to_clipboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/copyToClipboard" />
-</LinearLayout>
+            android:id="@+id/copyToClipboard" />
+    </LinearLayout>
+</layout>
