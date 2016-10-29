@@ -15,8 +15,7 @@ public class Generator {
 
     public static String generatePassword(
             String serviceName, String keyword, int passwordLength, boolean useSpecialSymbols
-    )
-            throws UnsupportedEncodingException {
+    ) {
 
         int serviceNameNumber = getSumOfUTF8BytesFromString(serviceName);
         int keywordNumber = getSumOfUTF8BytesFromString(keyword);
@@ -146,9 +145,14 @@ public class Generator {
         return password;
     }
 
-    private static int getSumOfUTF8BytesFromString(String s) throws UnsupportedEncodingException {
+    private static int getSumOfUTF8BytesFromString(String s) {
         int sum = 0;
-        byte bytes[] = s.getBytes("UTF-8");
+        byte bytes[] = new byte[0];
+        try {
+            bytes = s.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         for (byte utf8Byte : bytes)
             sum += utf8Byte & 0xFF;
         return sum;
